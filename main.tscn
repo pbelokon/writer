@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dd1o1b323hghe"]
+[gd_scene load_steps=3 format=3 uid="uid://dd1o1b323hghe"]
 
 [ext_resource type="Script" uid="uid://cgfsci2gk8l24" path="res://main.cs" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://brtixw4h8vgxr" path="res://Texteditarea.cs" id="2_0xm2m"]
 
 [node name="main" type="Control"]
 layout_mode = 3
@@ -16,14 +17,58 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = 35.0
+offset_right = -1.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextEdit" type="TextEdit" parent="editorscreen"]
+[node name="TEXTEDITAREA" type="CodeEdit" parent="editorscreen"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Type..."
+scroll_smooth = true
+line_folding = true
+gutters_draw_line_numbers = true
+auto_brace_completion_enabled = true
+script = ExtResource("2_0xm2m")
+
+[node name="open" type="Button" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 5.0
+offset_right = 77.0
+offset_bottom = 36.0
+text = "Open File"
+
+[node name="OpenDialog" type="FileDialog" parent="open"]
+unique_name_in_owner = true
+oversampling_override = 1.0
+title = "Open a File"
+size = Vector2i(665, 360)
+file_mode = 0
+access = 2
+
+[node name="save" type="Button" parent="."]
+layout_mode = 0
+offset_left = 87.0
+offset_top = 5.0
+offset_right = 165.0
+offset_bottom = 36.0
+text = "Save File"
+
+[node name="SaveDialog" type="FileDialog" parent="save"]
+unique_name_in_owner = true
+access = 2
+
+[connection signal="pressed" from="open" to="." method="OnOpenPressed"]
+[connection signal="pressed" from="save" to="." method="OnSavePressed"]
