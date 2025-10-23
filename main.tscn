@@ -8,6 +8,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 138.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
@@ -32,7 +33,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
 offset_right = 1.0
-offset_bottom = -15.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 placeholder_text = "Type..."
@@ -42,15 +43,26 @@ gutters_draw_line_numbers = true
 auto_brace_completion_enabled = true
 script = ExtResource("2_0xm2m")
 
-[node name="open" type="Button" parent="."]
-layout_mode = 0
-offset_left = -1.0
-offset_top = 5.0
-offset_right = 77.0
-offset_bottom = 36.0
+[node name="tools" type="Node" parent="."]
+
+[node name="saveAs" type="Button" parent="tools"]
+offset_left = 205.0
+offset_right = 283.0
+offset_bottom = 31.0
+text = "Save  As"
+
+[node name="SaveAsDialog" type="FileDialog" parent="tools/saveAs"]
+unique_name_in_owner = true
+access = 2
+
+[node name="openFile" type="Button" parent="tools"]
+offset_left = 111.0
+offset_top = -1.0
+offset_right = 192.0
+offset_bottom = 30.0
 text = "Open File"
 
-[node name="OpenDialog" type="FileDialog" parent="open"]
+[node name="OpenDialog" type="FileDialog" parent="tools/openFile"]
 unique_name_in_owner = true
 oversampling_override = 1.0
 title = "Open a File"
@@ -58,19 +70,35 @@ size = Vector2i(665, 360)
 file_mode = 0
 access = 2
 
-[node name="save" type="Button" parent="."]
-layout_mode = 0
-offset_left = 87.0
-offset_top = 5.0
-offset_right = 165.0
-offset_bottom = 36.0
-text = "Save File"
+[node name="openFolder" type="Button" parent="tools"]
+offset_left = 4.0
+offset_right = 107.0
+offset_bottom = 31.0
+text = "Open Folder"
 
-[node name="SaveAsDialog" type="FileDialog" parent="save"]
+[node name="OpenFolderDialog" type="FileDialog" parent="tools/openFolder"]
 unique_name_in_owner = true
+title = "Open a Directory"
+file_mode = 2
 access = 2
 
-[connection signal="pressed" from="open" to="." method="OnOpenPressed"]
-[connection signal="file_selected" from="open/OpenDialog" to="." method="OnFileSelected"]
-[connection signal="pressed" from="save" to="." method="OnSaveAsPressed"]
-[connection signal="file_selected" from="save/SaveAsDialog" to="." method="OnFileSaveAsSelected"]
+[node name="folder_file_tree" type="Node" parent="."]
+
+[node name="folderTree" type="PanelContainer" parent="folder_file_tree"]
+offset_left = 4.0
+offset_top = 36.0
+offset_right = 136.0
+offset_bottom = 639.0
+
+[node name="DirTree" type="ItemList" parent="folder_file_tree"]
+unique_name_in_owner = true
+offset_top = 33.0
+offset_right = 137.0
+offset_bottom = 641.0
+
+[connection signal="pressed" from="tools/saveAs" to="." method="OnSaveAsPressed"]
+[connection signal="file_selected" from="tools/saveAs/SaveAsDialog" to="." method="OnFileSaveAsSelected"]
+[connection signal="pressed" from="tools/openFile" to="." method="OnOpenPressed"]
+[connection signal="file_selected" from="tools/openFile/OpenDialog" to="." method="OnFileSelected"]
+[connection signal="pressed" from="tools/openFolder" to="." method="OnOpenFolderPressed"]
+[connection signal="dir_selected" from="tools/openFolder/OpenFolderDialog" to="." method="OnOpenDirSelected"]

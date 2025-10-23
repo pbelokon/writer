@@ -1,8 +1,12 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1761156768
+::res://::1761238499
 icon.svg::CompressedTexture2D::8174898990502310407::1759622957::1759623943::1::::<><><>0<>0<>0401abdb729e252749d2e0a8f7c128db<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+image.png::CompressedTexture2D::3488480966009670019::1761238499::1761238525::1::::<><><>0<>0<>469b396643e63541227b83f45927c97b<>res://.godot/imported/image.png-2de165adb17dfebcee8a7cd6c9833936.ctex::
 license.txt::TextFile::-1::1759624065::0::1::::<><><>0<>0<><>::
-main.cs::CSharpScript::5205393257626108423::1759707196::0::1::::<>Control<><>0<>0<><>::
+main.cs::CSharpScript::5205393257626108423::1761238261::0::1::::<>Control<><>0<>0<><>::
 main.gdshader::Shader::6235698038950472134::1759708151::0::1::::<><><>0<>0<><>::
-main.tscn::PackedScene::7424398969181542242::1759717454::0::1::::<><><>0<>0<><>::uid://cgfsci2gk8l24::::res://main.cs
-Readme.md::TextFile::-1::1759716772::0::1::::<><><>0<>0<><>::
+main.tscn::PackedScene::7424398969181542242::1761238209::0::1::::<><><>0<>0<><>::uid://cgfsci2gk8l24::::res://main.cs<>uid://brtixw4h8vgxr::::res://Texteditarea.cs
+OpenFile.cs::CSharpScript::7195676253822875811::1761192239::0::1::::<>Button<><>0<>0<><>::
+Readme.md::TextFile::-1::1761238519::0::1::::<><><>0<>0<><>::
+Texteditarea.cs::CSharpScript::3619382212744743055::1761158915::0::1::::<>CodeEdit<><>0<>0<><>::
+::res://tools/::1761156847

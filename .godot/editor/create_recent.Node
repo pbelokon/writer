@@ -1,5 +1,8 @@
+ItemList
+PanelContainer
 FileDialog
 Button
+Node
 CodeEdit
 TextEdit
 ColorRect
