@@ -66,9 +66,11 @@ offset_right = 165.0
 offset_bottom = 36.0
 text = "Save File"
 
-[node name="SaveDialog" type="FileDialog" parent="save"]
+[node name="SaveAsDialog" type="FileDialog" parent="save"]
 unique_name_in_owner = true
 access = 2
 
 [connection signal="pressed" from="open" to="." method="OnOpenPressed"]
-[connection signal="pressed" from="save" to="." method="OnSavePressed"]
+[connection signal="file_selected" from="open/OpenDialog" to="." method="OnFileSelected"]
+[connection signal="pressed" from="save" to="." method="OnSaveAsPressed"]
+[connection signal="file_selected" from="save/SaveAsDialog" to="." method="OnFileSaveAsSelected"]
