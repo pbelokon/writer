@@ -6,4 +6,4 @@ This is an open-source project but any pull requests will be allowed after beta 
 
 ## Current Preview
 
-![alt text](image.png)
+![alt text](image-1.png)
